@@ -27,6 +27,7 @@ const silkscreen = Silkscreen({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://glasher.com"),
   title: "GLASHER",
   description: "GLASHER — Music, Links & More",
 };
