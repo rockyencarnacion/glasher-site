@@ -11,7 +11,7 @@ const COLORS = {
   bg: "#f5efe6",
   card: "#ffffff",
   cardBorder: "#e3dccf",
-  navy: "#1e3a8a",
+  navy: "#7dd3fc",
   ink: "#1a1a1a",
   body: "#555555",
   muted: "#8b857a",

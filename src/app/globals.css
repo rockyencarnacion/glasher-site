@@ -596,8 +596,12 @@ html, body {
 .tagline {
   font-family: var(--font-silkscreen), "Silkscreen", monospace;
   font-size: clamp(0.55rem, 1.8vw, 0.75rem);
-  color: #1e3a8a;
-  -webkit-text-stroke: 0.5px #1e3a8a;
+  color: #7dd3fc;
+  -webkit-text-stroke: 0.5px #7dd3fc;
+  text-shadow:
+    0 0 4px rgba(125, 211, 252, 0.6),
+    0 0 10px rgba(125, 211, 252, 0.35),
+    0 0 22px rgba(56, 189, 248, 0.2);
   text-align: justify;
   text-align-last: justify;
   text-wrap: balance;
@@ -614,8 +618,12 @@ html, body {
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 0.05em;
-  color: #1e3a8a;
-  -webkit-text-stroke: 0.8px #1e3a8a;
+  color: #7dd3fc;
+  -webkit-text-stroke: 0.8px #7dd3fc;
+  text-shadow:
+    0 0 5px rgba(125, 211, 252, 0.65),
+    0 0 14px rgba(125, 211, 252, 0.4),
+    0 0 28px rgba(56, 189, 248, 0.22);
 }
 
 .tagline-left {
