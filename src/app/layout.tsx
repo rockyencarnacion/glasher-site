@@ -52,6 +52,7 @@ export default function RootLayout({
           muted
           playsInline
         >
+          <source src="/glass-cube.mp4" type="video/mp4" />
           <source src="/glass-cube.webm" type="video/webm" />
         </video>
         <Script id="video-speed" strategy="afterInteractive">
