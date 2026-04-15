@@ -1,65 +1,159 @@
-import Image from "next/image";
+import Link from "next/link";
+import { LinkButton } from "@/components/LinkButton";
+import { GlitchLogo } from "@/components/GlitchLogo";
+import { FlagshipPlayer } from "@/components/FlagshipPlayer";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import { ScrambleText } from "@/components/ScrambleText";
+
+const SOCIAL_CIRCLES = [
+  {
+    title: "Instagram",
+    url: "https://www.instagram.com/glashermusic/",
+    icon: "instagram",
+  },
+  {
+    title: "TikTok",
+    url: "https://www.tiktok.com/@glashermusic",
+    icon: "tiktok",
+  },
+  {
+    title: "YouTube",
+    url: "https://www.youtube.com/@glashermusic",
+    icon: "youtube",
+  },
+];
+
+const MUSIC_CIRCLES = [
+  {
+    title: "Spotify",
+    url: "https://open.spotify.com/artist/1RXHL363ZDGQRb5tHN54ea?si=7DJhItjDRt6hWQM6ZJTwSw",
+    icon: "spotify",
+  },
+  {
+    title: "Apple Music",
+    url: "https://music.apple.com/us/artist/glasher/1614948193",
+    icon: "apple-music",
+  },
+  {
+    title: "SoundCloud",
+    url: "https://soundcloud.com/glashermusic",
+    icon: "soundcloud",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <main className="flex-1 flex flex-col items-center">
+      {/* Full-width header */}
+      <div className="w-full pt-32">
+        <h1>
+          <GlitchLogo />
+        </h1>
+      </div>
+
+      {/* Tagline */}
+      <ScrambleText
+        text="GLASHER, the phonetic of 'glacier', an extremely large mass of ice which moves very slowly, often down a mountain valley."
+        duration={4000}
+        delay={600}
+        className="tagline animate-fade-in"
+        style={{ animationDelay: "600ms" }}
+      />
+
+      <div className="w-full max-w-md flex flex-col items-center gap-6 px-4 pt-8 pb-24">
+
+        {/* Flagship Track */}
+        <FlagshipPlayer />
+
+        {/* Social Platform Circles */}
+        <div className="flex gap-4 animate-fade-in" style={{ animationDelay: "275ms" }}>
+          {SOCIAL_CIRCLES.map((link) => (
+            <LinkButton
+              key={link.title}
+              title={link.title}
+              url={link.url}
+              icon={link.icon}
+              circle
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          ))}
         </div>
-      </main>
-    </div>
+
+        {/* Bio */}
+        <p
+          className="tagline animate-fade-in mb-3"
+          style={{ animationDelay: "100ms" }}
+        >
+          listen &gt; feel &gt; love
+        </p>
+
+        {/* Music Platform Circles */}
+        <div className="flex gap-4 animate-fade-in" style={{ animationDelay: "150ms" }}>
+          {MUSIC_CIRCLES.map((link) => (
+            <LinkButton
+              key={link.title}
+              title={link.title}
+              url={link.url}
+              icon={link.icon}
+              circle
+            />
+          ))}
+        </div>
+
+        {/* YouTube Video */}
+        <div className="w-full animate-fade-in" style={{ animationDelay: "200ms" }}>
+          <div className="flagship-player">
+            <div className="yt-embed">
+              <iframe
+                src="https://www.youtube.com/embed/BO9UndHmqn0"
+                width="100%"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                title="GLASHER — YouTube"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* SoundCloud Mix */}
+        <div className="w-full animate-fade-in" style={{ animationDelay: "250ms" }}>
+          <div className="flagship-player">
+            <iframe
+              width="100%"
+              height="300"
+              scrolling="no"
+              frameBorder="no"
+              allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/glashermusic/glasher-guest-mix-with-benzi-at-dim-mak-studios-on-iheart-radio-evolution-082225&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
+              title="GLASHER — SoundCloud Mix"
+            />
+          </div>
+        </div>
+
+        {/* EPK pill */}
+        <div className="animate-fade-in" style={{ animationDelay: "300ms" }}>
+          <Link href="/press" className="epk-pill epk-pill-large">
+            <span className="press-kit-text" style={{ fontSize: "1.4rem" }}>
+              EPK / Press Kit →
+            </span>
+          </Link>
+        </div>
+
+        {/* Contact tile */}
+        <ScrollReveal delay={50}>
+          <a href="mailto:rocky@glasher.com" className="contact-tile flagship-player">
+            <div className="contact-tile-label press-kit-text">Contact</div>
+            <div className="contact-tile-email press-kit-text">rocky@glasher.com</div>
+          </a>
+        </ScrollReveal>
+
+        {/* Footer */}
+        <ScrollReveal delay={100}>
+          <p className="text-xs font-bold text-white mt-6 text-center">
+            &copy; {new Date().getFullYear()} GLASHER. All rights reserved.
+          </p>
+        </ScrollReveal>
+      </div>
+    </main>
   );
 }
