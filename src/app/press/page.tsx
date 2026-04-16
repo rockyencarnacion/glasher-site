@@ -105,8 +105,8 @@ export default function PressPage() {
       {/* Download Press Kit */}
       <section className="flex justify-center">
         <a
-          href="/api/press-kit"
-          download="GLASHER-Press-Kit.pdf"
+          href="/press/GLASHER_EPK.html"
+          download="GLASHER-Press-Kit.html"
           className="link-card-circle press-kit-circle group"
           aria-label="Download Press Kit"
         >
